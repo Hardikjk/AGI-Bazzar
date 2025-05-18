@@ -12,6 +12,7 @@ interface AgentCardProps {
   category: string;
   rating: number;
   featured?: boolean;
+  subscription?: boolean;
 }
 
 const AgentCard = ({
@@ -22,7 +23,8 @@ const AgentCard = ({
   image,
   category,
   rating,
-  featured = false
+  featured = false,
+  subscription = false
 }: AgentCardProps) => {
   return (
     <Card className={`overflow-hidden transition-all duration-300 hover:shadow-lg ${featured ? 'premium-card border-gold ring-1 ring-gold/20' : 'border-border'}`}>
@@ -58,7 +60,15 @@ const AgentCard = ({
       </CardContent>
       
       <CardFooter className="pt-0 flex justify-between items-center">
-        <span className="font-semibold text-emerald">${price.toFixed(2)}</span>
+        <div>
+          <span className="font-semibold text-emerald">${price.toFixed(2)}</span>
+          {subscription && (
+            <span className="text-xs text-charcoal-light ml-1">/month</span>
+          )}
+          {!subscription && (
+            <span className="text-xs text-charcoal-light ml-1">one-time</span>
+          )}
+        </div>
         <button className="text-sm font-medium text-sapphire hover:text-sapphire-light transition-colors">
           View Details
         </button>

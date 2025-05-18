@@ -1,10 +1,12 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import FeaturedAgents from '../components/FeaturedAgents';
 import CreatorProfile from '../components/CreatorProfile';
 import Footer from '../components/Footer';
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   return (
@@ -25,12 +27,16 @@ const Index = () => {
                   Join thousands of creators who are building the future of AI automation. No coding required, just your creativity.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="px-6 py-3 bg-gold text-charcoal-dark font-medium rounded-lg hover:bg-gold-light transition-colors">
-                    Start Creating
-                  </button>
-                  <button className="px-6 py-3 bg-transparent border border-cream/30 text-cream font-medium rounded-lg hover:bg-white/10 transition-colors">
-                    Learn More
-                  </button>
+                  <Link to="/marketplace">
+                    <Button className="px-6 py-3 bg-gold text-charcoal-dark font-medium rounded-lg hover:bg-gold-light transition-colors">
+                      Explore Marketplace
+                    </Button>
+                  </Link>
+                  <Link to="/list-agent">
+                    <Button className="px-6 py-3 bg-transparent border border-cream/30 text-cream font-medium rounded-lg hover:bg-white/10 transition-colors">
+                      List Your Agent
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
