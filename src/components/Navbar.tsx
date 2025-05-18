@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -18,11 +18,18 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <span className="text-2xl font-heading font-bold text-emerald">AgentMesh</span>
+              <ShoppingBag className="h-6 w-6 text-emerald mr-2" />
+              <span className="text-2xl font-heading font-bold text-emerald">AGI Bazzar</span>
             </Link>
           </div>
           
           <div className="hidden md:flex items-center space-x-4">
+            <Link to="/marketplace" className="text-charcoal hover:text-emerald transition-colors">
+              Marketplace
+            </Link>
+            <Link to="/list-agent" className="text-charcoal hover:text-emerald transition-colors">
+              List Your Agent
+            </Link>
             <Button variant="outline" className="border-emerald text-emerald hover:bg-emerald hover:text-cream">
               <Link to="/login">Log In</Link>
             </Button>
@@ -46,6 +53,12 @@ const Navbar = () => {
       )}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-4 mt-6">
+            <Link to="/marketplace" className="text-charcoal hover:text-emerald transition-colors py-2">
+              Marketplace
+            </Link>
+            <Link to="/list-agent" className="text-charcoal hover:text-emerald transition-colors py-2">
+              List Your Agent
+            </Link>
             <Button variant="outline" className="border-emerald text-emerald hover:bg-emerald hover:text-cream w-full">
               <Link to="/login" className="w-full">Log In</Link>
             </Button>
